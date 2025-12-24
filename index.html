@@ -7,117 +7,162 @@
   <title>Adidas internship — Landing</title>
 
   <style>
-    :root{
-      --accent:#00d1ff;
-      --muted:rgba(255,255,255,0.85);
+    :root {
+      --accent: #00d1ff;
+      --muted: rgba(255,255,255,0.85);
       --bg-overlay: rgba(0,0,0,0.45);
       --card-bg: rgba(255,255,255,0.06);
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    html,body {height:100%; margin:0;}
-    body{
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
       color: #fff;
-      background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=80');
+      background-image: url('webp_large_202112291737-76f5c3fde1bae70276f5f8563603365c.webp'); /* your real image */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* page overlay and layout */
-    .site-wrap{
-      min-height:100%;
-      display:flex;
-      flex-direction:column;
+    .site-wrap {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
       background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.5));
     }
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:1rem 2rem;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
       backdrop-filter: blur(6px);
     }
-    .brand { font-weight:700; letter-spacing:0.4px; }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
     nav a {
       color: var(--muted);
-      text-decoration:none;
-      margin-left:1rem;
-      font-size:0.95rem;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.95rem;
     }
 
-    main{
-      flex:1;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:2rem;
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2rem;
     }
+
     .hero {
-      width:100%;
-      max-width:1100px;
+      width: 100%;
+      max-width: 1100px;
       background: var(--bg-overlay);
-      padding:2rem;
-      border-radius:12px;
+      padding: 2rem;
+      border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      display:grid;
+      display: grid;
       grid-template-columns: 1fr;
-      gap:1.5rem;
-      align-items:center;
-    }
-    @media(min-width:900px){
-      .hero { grid-template-columns: 1fr 420px; }
+      gap: 1.5rem;
+      align-items: center;
     }
 
-    .hero-left h1{
-      margin:0 0 0.5rem 0;
+    @media(min-width:900px) {
+      .hero {
+        grid-template-columns: 1fr 420px;
+      }
+    }
+
+    .hero-left h1 {
+      margin: 0 0 0.5rem 0;
       font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     }
-    .hero-left p{ margin:0; color:var(--muted); line-height:1.5; }
+
+    .hero-left p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
 
     .cta {
-      margin-top:1rem;
-      display:flex;
-      gap:0.75rem;
-      flex-wrap:wrap;
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
     }
+
     .btn {
-      padding:0.6rem 1rem;
-      border-radius:8px;
-      background:var(--accent);
-      color:#001;
-      text-decoration:none;
-      font-weight:600;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #001;
+      text-decoration: none;
+      font-weight: 600;
     }
-    .btn.ghost{
-      background:transparent;
-      border:1px solid rgba(255,255,255,0.12);
-      color:var(--muted);
+
+    .btn.ghost {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--muted);
     }
 
     .card {
       background: var(--card-bg);
-      padding:1rem;
-      border-radius:10px;
-      color:var(--muted);
-      text-align:center;
-    }
-    .features{
-      display:grid;
-      grid-template-columns:repeat(1,1fr);
-      gap:1rem;
-      margin-top:1rem;
-    }
-    @media(min-width:800px){
-      .features{ grid-template-columns:repeat(3,1fr); }
+      padding: 1rem;
+      border-radius: 10px;
+      color: var(--muted);
+      text-align: center;
     }
 
-    footer{
-      padding:1rem 2rem;
-      font-size:0.9rem;
-      color:rgba(255,255,255,0.7);
-      text-align:center;
+    .features {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    @media(min-width:800px) {
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .section {
+      max-width: 900px;
+      margin-top: 3rem;
+      background: rgba(0,0,0,0.5);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    .section p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
     }
   </style>
 </head>
@@ -133,10 +178,23 @@
     </header>
 
     <main>
+      <!-- HERO Section -->
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-left">
-          <h1 id="hero-title">Build your future — Adidas internship portfolio</h1>
-          <p>Welcome — this is a one-pager to showcase projects, skills, and contact info. Replace this text with your own introduction and add links to your work below.</p>
+          <h1 id="hero-title">You Got This</h1>
+          <p>
+            I had to keep reminding myself of this while reteaching myself how to create and publish a live website — almost entirely on my own — after completing the Global Career Accelerator. 
+            Despite only having slim memorization of HTML and CSS, I pushed through and earned certifications in:
+            <br><br>
+            <strong>• AI Professional Skills</strong><br>
+            <strong>• Intercultural Skills</strong><br>
+            <strong>• UX/UI & Prototyping</strong><br>
+            <strong>• Data Visualization (Data Analytics)</strong><br>
+            <strong>• SEO Essentials (Semrush)</strong>
+            <br><br>
+            Rebuilding this site reminded me of the immense full-body reward that comes from pushing through something I once thought I couldn't do — just like in sports. 
+            When you put your mind to it, commit, and trust the process, the impossible becomes possible.
+          </p>
 
           <div class="cta">
             <a class="btn" href="#projects">View Projects</a>
@@ -146,11 +204,11 @@
           <div class="features" style="margin-top:1.25rem;">
             <div class="card">
               <strong>Project</strong>
-              <div style="font-size:0.9rem;margin-top:0.5rem;">Describe a featured project here.</div>
+              <div style="font-size:0.9rem;margin-top:0.5rem;">Portfolio site created and deployed independently.</div>
             </div>
             <div class="card">
               <strong>Skills</strong>
-              <div style="font-size:0.9rem;margin-top:0.5rem;">HTML · CSS · JavaScript · UI Design</div>
+              <div style="font-size:0.9rem;margin-top:0.5rem;">HTML · CSS · UX/UI · SEO · AI Awareness</div>
             </div>
             <div class="card">
               <strong>Availability</strong>
@@ -161,11 +219,28 @@
 
         <aside style="padding:1rem;">
           <div class="card" style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=60"
-                 alt="Example project screenshot" style="width:100%;border-radius:8px;display:block;margin-bottom:0.75rem;" />
-            <div style="color:var(--muted);font-size:0.95rem;">Project screenshot or profile photo — replace me</div>
+            <img src="webp_large_202112291737-76f5c3fde1bae70276f5f8563603365c.webp"
+                 alt="Mount Rushmore" style="width:100%;border-radius:8px;display:block;margin-bottom:0.75rem;" />
+            <div style="color:var(--muted);font-size:0.95rem;">Mt. Rushmore — a symbol of legacy and perseverance.</div>
           </div>
         </aside>
+      </section>
+
+      <!-- NEW SECTION: Nothing Is Impossible -->
+      <section class="section">
+        <h2>Nothing Is Impossible</h2>
+        <p>
+          This project — built from scratch and fueled by self-belief — is a direct reflection of what adidas stands for: 
+          the power of showing up with courage, curiosity, and grit.
+        </p>
+        <p>
+          "Impossible Is Nothing" isn’t just a tagline. It’s a mindset I've carried in every sport, every challenge, and now, every project.
+          Whether I was earning my black belt, flying in cheerleading, or pushing through data visualization coursework, I’ve learned that 
+          limits are meant to be tested.
+        </p>
+        <p>
+          That’s why I’m ready to bring this mindset into the adidas internship — and beyond.
+        </p>
       </section>
     </main>
 
@@ -175,3 +250,4 @@
   </div>
 </body>
 </html>
+
