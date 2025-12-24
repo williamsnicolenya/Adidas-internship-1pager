@@ -1,1 +1,0 @@
-# Adidas-internship-1pager
