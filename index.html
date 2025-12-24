@@ -1,137 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>You Got This – Personal Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            font-family: "Arial", sans-serif;
-            color: #222;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Adidas internship — portfolio landing page" />
+  <title>Adidas internship — Landing</title>
 
-        /* Hero Section */
-        .hero {
-            background: url('background.jpg') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            background-attachment: fixed;
-        }
+  <style>
+    :root{
+      --accent:#00d1ff;
+      --muted:rgba(255,255,255,0.85);
+      --bg-overlay: rgba(0,0,0,0.45);
+      --card-bg: rgba(255,255,255,0.06);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body {height:100%; margin:0;}
+    body{
+      color: #fff;
+      background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
 
-        .hero h1 {
-            font-size: 4rem;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-        }
+    /* page overlay and layout */
+    .site-wrap{
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.5));
+    }
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1rem 2rem;
+      backdrop-filter: blur(6px);
+    }
+    .brand { font-weight:700; letter-spacing:0.4px; }
+    nav a {
+      color: var(--muted);
+      text-decoration:none;
+      margin-left:1rem;
+      font-size:0.95rem;
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin-top: 1.5rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 1rem;
-            border-radius: 8px;
-        }
+    main{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2rem;
+    }
+    .hero {
+      width:100%;
+      max-width:1100px;
+      background: var(--bg-overlay);
+      padding:2rem;
+      border-radius:12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:1.5rem;
+      align-items:center;
+    }
+    @media(min-width:900px){
+      .hero { grid-template-columns: 1fr 420px; }
+    }
 
-        /* Content Sections */
-        .content {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
+    .hero-left h1{
+      margin:0 0 0.5rem 0;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+    }
+    .hero-left p{ margin:0; color:var(--muted); line-height:1.5; }
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-        }
+    .cta {
+      margin-top:1rem;
+      display:flex;
+      gap:0.75rem;
+      flex-wrap:wrap;
+    }
+    .btn {
+      padding:0.6rem 1rem;
+      border-radius:8px;
+      background:var(--accent);
+      color:#001;
+      text-decoration:none;
+      font-weight:600;
+    }
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.12);
+      color:var(--muted);
+    }
 
-        p {
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
+    .card {
+      background: var(--card-bg);
+      padding:1rem;
+      border-radius:10px;
+      color:var(--muted);
+      text-align:center;
+    }
+    .features{
+      display:grid;
+      grid-template-columns:repeat(1,1fr);
+      gap:1rem;
+      margin-top:1rem;
+    }
+    @media(min-width:800px){
+      .features{ grid-template-columns:repeat(3,1fr); }
+    }
 
-        ul {
-            list-style-type: square;
-            padding-left: 1.5rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-                padding: 1rem;
-            }
-        }
-    </style>
+    footer{
+      padding:1rem 2rem;
+      font-size:0.9rem;
+      color:rgba(255,255,255,0.7);
+      text-align:center;
+    }
+  </style>
 </head>
 <body>
+  <div class="site-wrap">
+    <header>
+      <div class="brand">Adidas Internship</div>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-    <!-- Hero Section with Mt. Rushmore Background -->
-    <div class="hero">
-        <h1>You Got This</h1>
-        <p>
-            I had to keep reminding myself of this as I re-learned how to create and publish a live website — almost entirely on my own. 
-            With only a faint memory of HTML from past experiences, I pushed through after completing my Global Career Accelerator course where I earned multiple certifications.
-        </p>
-    </div>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-left">
+          <h1 id="hero-title">Build your future — Adidas internship portfolio</h1>
+          <p>Welcome — this is a one-pager to showcase projects, skills, and contact info. Replace this text with your own introduction and add links to your work below.</p>
 
-    <!-- Content Section -->
-    <div class="content">
-        <h2>Certifications Earned</h2>
-        <ul>
-            <li><strong>AI Professional Skills Certification</strong> — The Global Career Accelerator (Sep 2025)</li>
-            <li><strong>Intercultural Skills Certification</strong> — The Global Career Accelerator (Sep 2025)</li>
-            <li><strong>UX/UI & Prototyping Certification</strong> — The Global Career Accelerator (Sep 2025)</li>
-            <li><strong>Data Visualization Certification</strong> — The Global Career Accelerator (Aug 2025)  
-                <br><em>Skills: Data Analytics</em>
-            </li>
-            <li><strong>SEO Essentials</strong> — Semrush (Aug 2025)</li>
-        </ul>
+          <div class="cta">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn ghost" href="#contact">Get in touch</a>
+          </div>
 
-        <p>
-            After facing the challenges of building this site from scratch, I was reminded of the full-body reward that comes from perseverance — 
-            that same satisfying ache after pushing through something you once believed couldn’t be done. 
-            It reminded me of training for my black belt in Taekwondo, mastering routines as a flyer in cheer, 
-            and fighting for every win in Academy League soccer. In all those moments, what pulled me through was belief.
-        </p>
+          <div class="features" style="margin-top:1.25rem;">
+            <div class="card">
+              <strong>Project</strong>
+              <div style="font-size:0.9rem;margin-top:0.5rem;">Describe a featured project here.</div>
+            </div>
+            <div class="card">
+              <strong>Skills</strong>
+              <div style="font-size:0.9rem;margin-top:0.5rem;">HTML · CSS · JavaScript · UI Design</div>
+            </div>
+            <div class="card">
+              <strong>Availability</strong>
+              <div style="font-size:0.9rem;margin-top:0.5rem;">Open to internship opportunities</div>
+            </div>
+          </div>
+        </div>
 
-        <p>
-            Just like in sport, you don’t always have every answer — but if you show up, commit, and push forward with purpose, 
-            you realize: <strong>You Got This.</strong>
-        </p>
+        <aside style="padding:1rem;">
+          <div class="card" style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=60"
+                 alt="Example project screenshot" style="width:100%;border-radius:8px;display:block;margin-bottom:0.75rem;" />
+            <div style="color:var(--muted);font-size:0.95rem;">Project screenshot or profile photo — replace me</div>
+          </div>
+        </aside>
+      </section>
+    </main>
 
-        <h2>Nothing Is Impossible</h2>
-        <p>
-            This experience has deepened my connection to adidas' message. 
-            It’s not about perfection — it’s about persistence. 
-            It’s about finding the strength to continue even when doubt creeps in. 
-            That’s what <strong>"Impossible Is Nothing"</strong> means to me. 
-            It's the mindset that pushes boundaries, both physical and mental.
-        </p>
-    </div>
-
-    <footer>
-        &copy; 2025 – Created with grit and growth. Inspired by adidas' "You Got This" campaign.
+    <footer id="contact">
+      <div>Made by you • <a href="mailto:your-email@example.com" style="color:var(--muted);text-decoration:underline;">your-email@example.com</a></div>
     </footer>
-
+  </div>
 </body>
 </html>
