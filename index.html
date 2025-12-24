@@ -1,46 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Adidas internship 1-pager</title>
-  <style>
-    html, body { height: 100%; margin: 0; }
-    body {
-      background-image: url('https://your-image-url.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      font-family: Arial, sans-serif;
-      color: #fff;
-    }
-    .content {
-      min-height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      background: rgba(0,0,0,0.35);
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1rem;
-      background: rgba(255,255,255,0.15);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>You Got This – Personal Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+            color: #222;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('fded48a8-37de-40eb-b011-7f5d2b9a84ef.png') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            background-attachment: fixed;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-top: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        /* Content Sections */
+        .content {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="content">
-    <div>
-      <h1>Adidas internship 1-pager</h1>
-      <p>This page uses a background image set in CSS.</p>
-      <a class="button" href="#">Learn more</a>
+
+    <!-- Hero Section with Mt. Rushmore Background -->
+    <div class="hero">
+        <h1>You Got This</h1>
+        <p>
+            I had to keep reminding myself of this as I re-learned how to create and publish a live website — almost entirely on my own. 
+            With only a faint memory of HTML from past experiences, I pushed through after completing my Global Career Accelerator course where I earned multiple certifications.
+        </p>
     </div>
-  </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h2>Certifications Earned</h2>
+        <ul>
+            <li><strong>AI Professional Skills Certification</strong> — The Global Career Accelerator (Sep 2025)</li>
+            <li><strong>Intercultural Skills Certification</strong> — The Global Career Accelerator (Sep 2025)</li>
+            <li><strong>UX/UI & Prototyping Certification</strong> — The Global Career Accelerator (Sep 2025)</li>
+            <li><strong>Data Visualization Certification</strong> — The Global Career Accelerator (Aug 2025)  
+                <br><em>Skills: Data Analytics</em>
+            </li>
+            <li><strong>SEO Essentials</strong> — Semrush (Aug 2025)</li>
+        </ul>
+
+        <p>
+            After facing the challenges of building this site from scratch, I was reminded of the full-body reward that comes from perseverance — 
+            that same satisfying ache after pushing through something you once believed couldn’t be done. 
+            It reminded me of training for my black belt in Taekwondo, mastering routines as a flyer in cheer, 
+            and fighting for every win in Academy League soccer. In all those moments, what pulled me through was belief.
+        </p>
+
+        <p>
+            Just like in sport, you don’t always have every answer — but if you show up, commit, and push forward with purpose, 
+            you realize: <strong>You Got This.</strong>
+        </p>
+
+        <h2>Nothing Is Impossible</h2>
+        <p>
+            This experience has deepened my connection to adidas' message. 
+            It’s not about perfection — it’s about persistence. 
+            It’s about finding the strength to continue even when doubt creeps in. 
+            That’s what <strong>"Impossible Is Nothing"</strong> means to me. 
+            It's the mindset that pushes boundaries, both physical and mental.
+        </p>
+    </div>
+
+    <footer>
+        &copy; 2025 – Created with grit and growth. Inspired by adidas' "You Got This" campaign.
+    </footer>
+
 </body>
 </html>
