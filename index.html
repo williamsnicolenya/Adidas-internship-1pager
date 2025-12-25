@@ -23,7 +23,7 @@
     body {
       color: #fff;
       background-image: url('uoautzenstadium.webp');
-      background-size: 120%; /* zoomed in to fill screen */
+      background-size: 120%;
       background-position: center top;
       background-repeat: no-repeat;
       -webkit-font-smoothing: antialiased;
@@ -158,11 +158,47 @@
       line-height: 1.6;
     }
 
+    .background-section {
+      width: 100%;
+      padding: 4rem 2rem;
+      background-image: url('unitedsportspic.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: rgba(0,0,0,0.4);
+      background-blend-mode: overlay;
+    }
+
+    .background-section-inner {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
     footer {
       padding: 2rem;
       font-size: 0.9rem;
       color: rgba(255,255,255,0.7);
       text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+      }
+
+      .cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -199,6 +235,7 @@
           <div class="cta">
             <a class="btn" href="#projects">View Projects</a>
             <a class="btn ghost" href="#contact">Get in touch</a>
+            <a class="btn" href="Resume.pdf" download>Download Resume</a>
           </div>
 
           <div class="features" style="margin-top:1.25rem;">
@@ -217,19 +254,19 @@
           </div>
         </div>
 
-        <!-- HERO SIDE IMAGE: IMG_7879.jpg -->
+        <!-- HERO Side Image -->
         <aside style="padding:1rem;">
           <div class="card" style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
-            <img src="IMG_7879.jpg"
-                 alt="Portfolio Snapshot" style="width:100%;border-radius:8px;display:block;margin-bottom:0.75rem;" />
+            <img src="nyataekwondokick.jpg"
+                 alt="Taekwondo Kick" style="width:100%;border-radius:8px;display:block;margin-bottom:0.75rem;" />
             <div style="color:var(--muted);font-size:0.95rem;">
-              The journey continues — building with passion, vision, and grit.
+              Practicing Taekwondo — where discipline, power, and perseverance meet.
             </div>
           </div>
         </aside>
       </section>
 
-      <!-- NOTHING IS IMPOSSIBLE SECTION -->
+      <!-- Section 2: Impossible -->
       <section class="section">
         <h2>Nothing Is Impossible</h2>
         <p>
@@ -245,12 +282,39 @@
           That’s why I’m ready to bring this mindset into the adidas internship — and beyond.
         </p>
         <div style="text-align:center;margin-top:2rem;">
-          <img src="nyataekwondokick.jpg" 
-               alt="Taekwondo Kick" 
+          <img src="IMG_7879.jpg" 
+               alt="Cheer Kick" 
                style="width:50%;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" />
           <p style="color:var(--muted);font-size:0.95rem;margin-top:0.75rem;">
-            Practicing Taekwondo — where discipline, power, and perseverance meet.
+            Finding confidence in movement, repetition, and trust.
           </p>
+        </div>
+      </section>
+
+      <!-- NEW Section 3: Connection + Influence -->
+      <section class="background-section">
+        <div class="background-section-inner">
+          <h2>Next Gen Through Sport</h2>
+          <p>
+            Sports have always been more than just competition — they’ve been my community. Whether it was Taekwondo with my teammates, 
+            soccer with my academy league, or cheering alongside a squad — I always knew I wasn’t just representing myself. 
+            I was part of something bigger — a family.
+          </p>
+          <p>
+            The power of a team is more than the sum of its parts. It's the accountability, the responsibility to uplift each other, and the unspoken influence we carry.
+            It's about being someone others can rely on — and learning from those who lead by example.
+          </p>
+          <p>
+            I want to inspire the next generation by continuing to show up as that teammate, that leader, and that example — on and off the field.
+          </p>
+          <div style="text-align:center;margin-top:2rem;">
+            <img src="IMG_7877.jpg"
+                 alt="Soccer Kick"
+                 style="width:50%;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" />
+            <p style="color:var(--muted);font-size:0.95rem;margin-top:0.75rem;">
+              Sports raised me — and gave me the responsibility to raise others up.
+            </p>
+          </div>
         </div>
       </section>
     </main>
