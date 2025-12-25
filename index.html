@@ -72,14 +72,6 @@
       margin-top: 1rem;
     }
 
-    .caption {
-      font-size: 0.85rem;
-      color: #ccc;
-      margin-top: 0.3rem;
-      text-align: center;
-      font-style: italic;
-    }
-
     .feature-icons {
       display: flex;
       justify-content: center;
@@ -113,11 +105,15 @@
     }
 
     .section-dark {
-      background-color: #222;
+      background: url('nyataekwondokick.jpg') center/cover no-repeat;
+      background-blend-mode: overlay;
+      background-color: rgba(0,0,0,0.6);
     }
 
     .section-light {
-      background-color: #333;
+      background: url('athletesworld.jpeg') center/cover no-repeat;
+      background-blend-mode: overlay;
+      background-color: rgba(0,0,0,0.5);
     }
 
     .section-title {
@@ -132,18 +128,16 @@
       font-size: 1.1rem;
       line-height: 1.6;
       text-align: center;
-    }
-
-    .image-center {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 2rem;
-    }
-
-    .image-center img {
-      width: 300px;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
       border-radius: 10px;
+    }
+
+    .hero-right .caption {
+      text-align: center;
+      font-style: italic;
+      margin-top: 0.5rem;
+      color: #ddd;
     }
 
     footer {
@@ -157,6 +151,55 @@
       color: var(--accent);
       text-decoration: none;
     }
+
+    /* Taekwondo Button */
+    .taekwondo-btn {
+      position: relative;
+      display: inline-block;
+      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+
+    .taekwondo-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+      transform: translate(-100%, -100%) rotate(25deg);
+      transition: transform 0.6s ease;
+      pointer-events: none;
+    }
+
+    .taekwondo-btn:hover::before {
+      transform: translate(0%, 0%) rotate(25deg);
+    }
+
+    .taekwondo-caption {
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: #ddd;
+    }
+
+    .image-center {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .image-center img {
+      width: 300px;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
@@ -164,7 +207,7 @@
   <header>
     <div class="brand">Adidas Internship</div>
     <nav>
-      <a href="#about.html">About</a>
+      <a href="about.html">About</a>
       <a href="Nya_Williams_Resume (1).pdf" target="_blank">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -186,7 +229,6 @@
       </div>
       <div class="hero-right">
         <img src="IMG_7879.jpg" alt="Soccer Team">
-        <div class="caption">🏆 Memories made on the field — my academy team.</div>
       </div>
     </div>
 
@@ -209,33 +251,37 @@
     </div>
   </section>
 
-<section class="section-dark" id="about" style="background: url('nyataekwondokick.jpg') center/cover no-repeat; background-blend-mode: overlay; background-color: rgba(0,0,0,0.6); padding-bottom: 6rem;">
-  <div class="section-text" style="background-color: rgba(0, 0, 0, 0.4); padding: 2rem; border-radius: 10px;">
-    <h2 class="section-title">Nothing Is Impossible</h2>
-    <p>This project — built from scratch and fueled by self-belief — is a direct reflection of what adidas stands for: the power of showing up with courage, curiosity, and grit.</p>
-    <p>"Impossible Is Nothing" isn’t just a tagline. It’s a mindset I’ve carried in every sport, every challenge, and now, every project. Whether I was earning my black belt, flying in cheerleading, or pushing through data visualization coursework, I’ve learned that limits are meant to be tested.</p>
-    <p>That’s why I’m ready to bring this mindset into the adidas internship — and beyond.</p>
-  </div>
-
-  <div style="margin-top: 4rem; text-align: center;">
-    <a href="about.html" style="text-decoration: none;">
-      <button style="font-size: 1.2rem; background: rgba(255,255,255,0.1); border: 1px solid white; padding: 0.5rem 1rem; border-radius: 8px; color: white; cursor: pointer;">
-        🥋
-      </button>
-    </a>
-    <p style="margin-top: 0.5rem;">Practicing Taekwondo — where discipline, power, and perseverance meet.</p>
-  </div>
-</section>
-
-  <section class="section-light" style="background: url('athletesworld.jpeg') center/cover no-repeat; background-blend-mode: overlay; background-color: rgba(0,0,0,0.5);">
-  <div class="hero-content" style="flex-direction: row-reverse;">
-    <div class="hero-left">
-      <h2 class="section-title">Next Gen Through Sport</h2>
-      <p>Sports have always been more than just competition — they’ve been my community. Whether it was Taekwondo with my teammates, soccer with my academy league, or cheering alongside a squad — I always knew I wasn’t just representing myself. I was part of something bigger — a family and a responsibility to others.</p>
+  <section class="section-dark" id="about">
+    <div class="section-text">
+      <h2 class="section-title">Nothing Is Impossible</h2>
+      <p>This project — built from scratch and fueled by self-belief — is a direct reflection of what adidas stands for: the power of showing up with courage, curiosity, and grit.</p>
+      <p>"Impossible Is Nothing" isn’t just a tagline. It’s a mindset I’ve carried in every sport, every challenge, and now, every project. Whether I was earning my black belt, flying in cheerleading, or pushing through data visualization coursework, I’ve learned that limits are meant to be tested.</p>
+      <p>That’s why I’m ready to bring this mindset into the adidas internship — and beyond.</p>
     </div>
-    <div class="hero-right">
-      <img src="IMG_7877.jpg" alt="Next Gen">
-      <div class="caption">⚽ Strength in sport — built together.</div>
+    <div style="margin-top: 4rem; text-align: center;">
+      <a href="about.html" style="text-decoration: none;">
+        <button class="taekwondo-btn">🥋</button>
+      </a>
+      <p class="taekwondo-caption">Practicing Taekwondo — where discipline, power, and perseverance meet.</p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="section-light">
+    <div class="hero-content" style="flex-direction: row-reverse;">
+      <div class="hero-left">
+        <h2 class="section-title">Next Gen Through Sport</h2>
+        <p>Sports have always been more than just competition — they’ve been my community. Whether it was Taekwondo with my teammates, soccer with my academy league, or cheering alongside a squad — I always knew I wasn’t just representing myself. I was part of something bigger — a family and a responsibility to others.</p>
+      </div>
+      <div class="hero-right">
+        <img src="IMG_7877.jpg" alt="Next Gen">
+        <div class="caption">⚽ Strength in sport — built together.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>Made by Nya Williams • <a href="mailto:williamsnicolenya@gmail.com">williamsnicolenya@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>
