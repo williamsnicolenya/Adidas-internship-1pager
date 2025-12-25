@@ -96,6 +96,41 @@
       font-weight: bold;
     }
 
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 1.25rem;
+      border-radius: 10px;
+      color: var(--muted);
+      text-align: center;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .card strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .card .icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
     .section {
       max-width: 900px;
       margin: 3rem auto;
@@ -120,7 +155,7 @@
       background-repeat: no-repeat;
       background-color: rgba(0, 0, 0, 0.4);
       background-blend-mode: overlay;
-      padding: 6rem 2rem; /* <-- stretched height */
+      padding: 7rem 2rem;
       transform: translateX(40px);
       animation: slideRight 1.2s ease;
     }
@@ -226,6 +261,24 @@
       </ul>
       <p>Rebuilding this reminded me of the full-body reward that comes from pushing through something I once thought I couldn’t do — just like in sport.</p>
       <a class="btn" href="Nya_Williams_Resume (1).pdf" target="_blank">View Resume</a>
+
+      <div class="cards">
+        <div class="card">
+          <span class="icon">💻</span>
+          <strong>Project</strong>
+          Portfolio site created and deployed independently.
+        </div>
+        <div class="card">
+          <span class="icon">🧰</span>
+          <strong>Skills</strong>
+          HTML · CSS · UX/UI · SEO · AI Awareness
+        </div>
+        <div class="card">
+          <span class="icon">📅</span>
+          <strong>Availability</strong>
+          Open to internship opportunities
+        </div>
+      </div>
     </div>
     <div>
       <img src="IMG_7879.jpg" alt="Cheerleading or sports image">
@@ -253,3 +306,4 @@
   </footer>
 </body>
 </html>
+
