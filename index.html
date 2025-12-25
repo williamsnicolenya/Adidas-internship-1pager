@@ -4,186 +4,179 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adidas Internship</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Helvetica Neue', sans-serif;
       background-color: #000;
       color: white;
     }
 
     header {
-      background: black;
+      background: #000;
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
-      padding: 1rem 2rem;
       align-items: center;
     }
 
-    header a {
-      color: deepskyblue;
-      margin-left: 1rem;
+    nav a {
+      color: #00bfff;
+      margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
     }
 
-    section {
-      padding: 3rem 2rem;
+    .section {
+      padding: 60px 30px;
+      position: relative;
     }
 
     .hero {
+      background: url('uoautzenstadium.webp') center/cover no-repeat;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: url('uoautzenstadium.webp') no-repeat center center;
-      background-size: cover;
-      position: relative;
-      min-height: 100vh;
-      color: white;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0,0,0,0.5);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 50%;
-    }
-
-    .hero-image {
-      max-width: 35%;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-image img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .hero-buttons {
-      margin-top: 1rem;
-    }
-
-    .hero-buttons a {
-      display: inline-block;
-      margin-right: 1rem;
-      padding: 0.6rem 1.2rem;
-      background: deepskyblue;
-      color: black;
-      font-weight: bold;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-
-    .info-cards {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .info-card {
-      background: rgba(0,0,0,0.7);
-      padding: 1.5rem;
-      border-radius: 10px;
-      text-align: center;
-      width: 200px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .info-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(255,255,255,0.2);
-    }
-
-    .info-card i {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-2 {
-      background: url('nyataekwondokick.jpg') no-repeat center center;
-      background-size: cover;
-      padding: 8rem 2rem;
-      position: relative;
-    }
-
-    .section-2::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-    }
-
-    .section-2 .content {
-      position: relative;
-      max-width: 60%;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 2rem;
-      border-radius: 10px;
-    }
-
-    .section-3 {
-      background: url('athletesworld.jpeg') no-repeat center center;
-      background-size: cover;
-      position: relative;
-      padding: 6rem 2rem;
-    }
-
-    .section-3::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-    }
-
-    .section-3 .section-content {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      height: 100vh;
       flex-wrap: wrap;
     }
 
-    .section-3 .text-box {
-      max-width: 55%;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
+    .hero-content {
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
       border-radius: 10px;
+      z-index: 2;
     }
 
-    .section-3 .image-box {
-      max-width: 35%;
+    .hero-image {
+      max-width: 400px;
+      border-radius: 10px;
+      margin-left: auto;
+      margin-right: 50px;
     }
 
-    .section-3 .image-box img {
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+      flex-wrap: wrap;
       width: 100%;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
       border-radius: 10px;
+      text-align: center;
+      width: 200px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card i {
+      font-size: 30px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .section2 {
+      background: url('nyataekwondokick.jpg') center/cover no-repeat;
+      padding: 100px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+    }
+
+    .section2 .text-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 800px;
+    }
+
+    .section3 {
+      background: url('mount-rushmore.jpeg') center/cover no-repeat;
+      padding: 80px 30px;
+      position: relative;
+    }
+
+    .section3 .text-box {
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    .section3-image {
+      max-width: 250px;
+      border-radius: 10px;
+      float: right;
+      margin-left: 20px;
+    }
+
+    .caption {
+      display: block;
+      font-size: 14px;
+      margin-top: 5px;
+      text-align: right;
+      color: #ccc;
     }
 
     footer {
-      background: #000;
+      background: #111;
+      padding: 20px;
       text-align: center;
-      padding: 1rem;
+      font-size: 14px;
       color: #aaa;
     }
 
     footer a {
-      color: deepskyblue;
+      color: #00bfff;
       text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding-bottom: 60px;
+      }
+
+      .hero-image {
+        margin: 20px 0;
+      }
+
+      .section2 .text-box, .section3 .text-box {
+        padding: 20px;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 80%;
+      }
+
+      .section3-image {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+      }
+
+      .caption {
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -198,11 +191,11 @@
     </nav>
   </header>
 
-  <!-- Section 1 -->
+  <!-- SECTION 1 -->
   <section class="hero">
     <div class="hero-content">
       <h1>You Got This</h1>
-      <p>I had to keep reminding myself of this while reteaching myself how to create and publish a live website — almost entirely on my own — after completing the Global Career Accelerator.</p>
+      <p>I had to keep reminding myself of this while reteaching myself how to create and publish a live website — almost entirely on my own — after completing the Global Career Accelerator. Despite only having slim memorization of HTML and CSS, I pushed through and earned certifications in:</p>
       <ul>
         <li>AI Professional Skills</li>
         <li>Intercultural Skills</li>
@@ -212,57 +205,50 @@
       </ul>
       <p>Rebuilding this reminded me of the full-body reward that comes from pushing through something I once thought I couldn’t do — just like in sport.</p>
     </div>
-    <div class="hero-image">
-      <img src="IMG_7879.jpg" alt="Soccer Team" />
-      <p style="text-align: center; margin-top: 0.5rem;"><i class="fas fa-dumbbell"></i> Strength in sport — built together.</p>
-    </div>
+    <img src="IMG_7879.jpg" class="hero-image" alt="US Soccer Team"/>
   </section>
 
-  <div class="info-cards">
-    <div class="info-card">
+  <!-- ICON CARDS UNDER SECTION 1 -->
+  <div class="cards">
+    <div class="card">
       <i class="fas fa-laptop"></i>
-      <h4>Project</h4>
-      <p>Portfolio site created and deployed independently.</p>
+      <strong>Project</strong><br/>
+      Portfolio site created and deployed independently.
     </div>
-    <div class="info-card">
+    <div class="card">
       <i class="fas fa-brain"></i>
-      <h4>Skills</h4>
-      <p>HTML · CSS · UX/UI · SEO · AI Awareness</p>
+      <strong>Skills</strong><br/>
+      HTML · CSS · UX/UI<br/>· SEO · AI Awareness
     </div>
-    <div class="info-card">
+    <div class="card">
       <i class="fas fa-calendar-alt"></i>
-      <h4>Availability</h4>
-      <p>Open to internship opportunities</p>
+      <strong>Availability</strong><br/>
+      Open to internship opportunities
     </div>
   </div>
 
-  <!-- Section 2 -->
-  <section class="section-2">
-    <div class="content">
+  <!-- SECTION 2 -->
+  <section class="section2">
+    <div class="text-box">
       <h2>Nothing Is Impossible</h2>
       <p>This project — built from scratch and fueled by self-belief — is a direct reflection of what adidas stands for: the power of showing up with courage, curiosity, and grit.</p>
       <p>"Impossible Is Nothing" isn’t just a tagline. It’s a mindset I’ve carried in every sport, every challenge, and now, every project.</p>
     </div>
   </section>
 
-  <!-- Section 3 -->
-  <section class="section-3">
-    <div class="section-content">
-      <div class="image-box">
-        <img src="IMG_7877.jpg" alt="Soccer girls">
-        <p style="text-align: center; margin-top: 0.5rem;"><i class="fas fa-star"></i> Memories made on the field — my academy team.</p>
-      </div>
-      <div class="text-box">
-        <h2>Next Gen Through Sport</h2>
-        <p>Sports have always been more than just competition — they’ve been my community. Whether it was Taekwondo with my teammates, soccer with my academy league, or cheering alongside a squad — I always knew I wasn’t just representing myself. I was part of something bigger — a family and a responsibility to others.</p>
-      </div>
+  <!-- SECTION 3 -->
+  <section class="section3">
+    <div class="text-box">
+      <h2>Next Gen Through Sport</h2>
+      <p>Sports have always been more than just competition — they’ve been my community. Whether it was Taekwondo with my teammates, soccer with my academy league, or cheering alongside a squad — I always knew I wasn’t just representing myself. I was part of something bigger — a family and a responsibility to others.</p>
     </div>
+    <img src="IMG_7877.jpg" alt="Taekwondo Kick" class="section3-image"/>
+    <span class="caption"><i class="fas fa-dumbbell"></i> Strength in sport — built together.</span>
   </section>
 
   <footer id="contact">
-    <p>Made by Nya Williams • <a href="mailto:williamsnicolenya@gmail.com">williamsnicolenya@gmail.com</a></p>
+    Made by Nya Williams • <a href="mailto:williamsnicolenya@gmail.com">williamsnicolenya@gmail.com</a>
   </footer>
 
 </body>
 </html>
-
