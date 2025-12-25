@@ -18,6 +18,7 @@
     html, body {
       height: 100%;
       margin: 0;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -55,6 +56,11 @@
       text-decoration: none;
       margin-left: 1rem;
       font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: white;
     }
 
     main {
@@ -77,6 +83,7 @@
       grid-template-columns: 1fr;
       gap: 1.5rem;
       align-items: center;
+      animation: fadeIn 1.5s ease;
     }
 
     @media(min-width:900px) {
@@ -110,6 +117,11 @@
       color: #001;
       text-decoration: none;
       font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #00b0e6;
     }
 
     .btn.ghost {
@@ -145,17 +157,8 @@
       background: rgba(0,0,0,0.5);
       padding: 2rem;
       border-radius: 12px;
-    }
-
-    .section h2 {
-      margin-top: 0;
-      font-size: 2rem;
-      color: #fff;
-    }
-
-    .section p {
-      color: var(--muted);
-      line-height: 1.6;
+      transform: translateX(-40px);
+      animation: slideLeft 1.2s ease;
     }
 
     .background-section {
@@ -167,6 +170,8 @@
       background-repeat: no-repeat;
       background-color: rgba(0,0,0,0.4);
       background-blend-mode: overlay;
+      transform: translateX(40px);
+      animation: slideRight 1.2s ease;
     }
 
     .background-section-inner {
@@ -184,7 +189,31 @@
       text-align: center;
     }
 
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideLeft {
+      from {transform: translateX(-100px); opacity: 0;}
+      to {transform: translateX(-40px); opacity: 1;}
+    }
+
+    @keyframes slideRight {
+      from {transform: translateX(100px); opacity: 0;}
+      to {transform: translateX(40px); opacity: 1;}
+    }
+
     @media (max-width: 600px) {
+      .hero, .section, .background-section {
+        transform: none !important;
+      }
+
       .hero {
         grid-template-columns: 1fr !important;
         text-align: center;
@@ -207,22 +236,18 @@
     <header>
       <div class="brand">Adidas Internship</div>
       <nav aria-label="Main navigation">
-        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+        <a href="Nya_Williams_Resume (1).pdf" class="btn" target="_blank">Resume</a>
       </nav>
     </header>
 
     <main>
       <!-- Hero Section -->
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero">
         <div class="hero-left">
-          <h1 id="hero-title">You Got This</h1>
-          <p>
-            I had to keep reminding myself of this while reteaching myself how to create and publish a live website —
-            almost entirely on my own — after completing the Global Career Accelerator. Despite only having slim
-            memorization of HTML and CSS, I pushed through and earned certifications in:
-          </p>
+          <h1>You Got This</h1>
+          <p>I had to keep reminding myself of this while reteaching myself how to create and publish a live website — almost entirely on my own — after completing the Global Career Accelerator.</p>
           <ul>
             <li><strong>AI Professional Skills</strong></li>
             <li><strong>Intercultural Skills</strong></li>
@@ -230,72 +255,43 @@
             <li><strong>Data Visualization (Data Analytics)</strong></li>
             <li><strong>SEO Essentials (Semrush)</strong></li>
           </ul>
-          <p>
-            Rebuilding this site reminded me of the immense full-body reward that comes from pushing through something I once thought I couldn’t do — just like in sports. When you put your mind to it, commit, and trust the process, the impossible becomes possible.
-          </p>
+          <p>Rebuilding this site reminded me of the immense full-body reward that comes from pushing through something I once thought I couldn’t do — just like in sports.</p>
 
           <div class="cta">
             <a class="btn" href="#projects">View Projects</a>
             <a class="btn ghost" href="#contact">Get in touch</a>
           </div>
-
-          <div class="features">
-            <div class="card"><strong>Project</strong><div>Portfolio site created and deployed independently.</div></div>
-            <div class="card"><strong>Skills</strong><div>HTML · CSS · UX/UI · SEO · AI Awareness</div></div>
-            <div class="card"><strong>Availability</strong><div>Open to internship opportunities</div></div>
-          </div>
         </div>
 
-        <aside style="padding:1rem;">
-          <div class="card" style="height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
-            <img src="IMG_7879.jpg" alt="Cheerleading Kick" style="width:100%;border-radius:8px;display:block;margin-bottom:0.75rem;" />
-            <div style="color:var(--muted);font-size:0.95rem;">Pushing limits — on the mat, and now in tech.</div>
-          </div>
+        <aside>
+          <img src="IMG_7879.jpg" alt="Cheerleading Kick" style="width:100%;border-radius:8px;" />
         </aside>
       </section>
 
-      <!-- Section 2: Nothing Is Impossible -->
+      <!-- Section 2 -->
       <section class="section">
         <h2>Nothing Is Impossible</h2>
         <p>This project — built from scratch and fueled by self-belief — is a direct reflection of what adidas stands for: the power of showing up with courage, curiosity, and grit.</p>
-        <p>"Impossible Is Nothing" isn’t just a tagline. It’s a mindset I've carried in every sport, every challenge, and now, every project. Whether I was earning my black belt, flying in cheerleading, or pushing through data visualization coursework, I’ve learned that limits are meant to be tested.</p>
-        <p>That’s why I’m ready to bring this mindset into the adidas internship — and beyond.</p>
+        <p>"Impossible Is Nothing" isn’t just a tagline. It’s a mindset I've carried in every sport, every challenge, and now, every project.</p>
         <div style="text-align:center;margin-top:2rem;">
-          <img src="nyataekwondokick.jpg" alt="Taekwondo Kick" style="width:50%;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" />
-          <p style="color:var(--muted);font-size:0.95rem;margin-top:0.75rem;">Practicing Taekwondo — where discipline, power, and perseverance meet.</p>
+          <img src="nyataekwondokick.jpg" alt="Taekwondo Kick" style="width:50%;border-radius:10px;" />
         </div>
       </section>
 
-      <!-- Section 3: Next Gen -->
+      <!-- Section 3 -->
       <section class="background-section">
         <div class="background-section-inner">
           <h2>Next Gen Through Sport</h2>
-          <p>
-            Sports have always been more than just competition — they’ve been my community. Whether it was Taekwondo with my teammates, 
-            soccer with my academy league, or cheering alongside a squad — I always knew I wasn’t just representing myself. 
-            I was part of something bigger — a family.
-          </p>
-          <p>
-            The power of a team is more than the sum of its parts. It's the accountability, the responsibility to uplift each other, and the unspoken influence we carry.
-            It's about being someone others can rely on — and learning from those who lead by example.
-          </p>
-          <p>
-            I want to inspire the next generation by continuing to show up as that teammate, that leader, and that example — on and off the field.
-          </p>
+          <p>Sports have always been more than just competition — they’ve been my community. Whether it was Taekwondo with my teammates, soccer with my academy league, or cheering alongside a squad — I always knew I wasn’t just representing myself. I was part of something bigger — a family.</p>
           <div style="text-align:center;margin-top:2rem;">
-            <img src="IMG_7877.jpg"
-                 alt="Soccer Kick"
-                 style="width:50%;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" />
-            <p style="color:var(--muted);font-size:0.95rem;margin-top:0.75rem;">
-              Sports raised me — and gave me the responsibility to raise others up.
-            </p>
+            <img src="IMG_7877.jpg" alt="Soccer Kick" style="width:50%;border-radius:10px;" />
           </div>
         </div>
       </section>
     </main>
 
     <footer id="contact">
-      <div>Made by you • <a href="mailto:your-email@example.com" style="color:var(--muted);text-decoration:underline;">your-email@example.com</a></div>
+      <div>Made by you • <a href="mailto:williamsnicolenya@gmail.com">williamsnicolenya@gmail.com</a></div>
     </footer>
   </div>
 </body>
