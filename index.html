@@ -4,148 +4,168 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adidas Internship — Nya Williams</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
+    :root {
+      --accent: #00d1ff;
+      --muted: rgba(255, 255, 255, 0.85);
+      --bg-overlay: rgba(0, 0, 0, 0.45);
+      --card-bg: rgba(255, 255, 255, 0.06);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
-      color: #fff;
-      line-height: 1.6;
+    html, body {
+      height: 100%;
+      background: #000;
+      color: white;
+    }
+    a {
+      text-decoration: none;
+      color: var(--accent);
     }
     header {
-      background: #000;
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header .brand {
-      font-weight: bold;
+      padding: 1rem 2rem;
+      background: #000;
     }
     nav a {
-      color: #00d1ff;
-      text-decoration: none;
       margin-left: 1.5rem;
-      font-weight: 500;
-    }
-
-    section {
-      padding: 5rem 2rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
       font-weight: bold;
+      font-size: 0.95rem;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 2rem;
+      background: url('uoautzenstadium.webp') no-repeat center center/cover;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 0;
+    }
+    .hero-content, .hero-image {
+      position: relative;
+      z-index: 1;
+      width: 48%;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
-
-    .hero-section {
-      background: url('uoautzenstadium.webp') center/cover no-repeat;
-      background-blend-mode: overlay;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
+    .hero p, .hero ul {
+      color: var(--muted);
+      line-height: 1.5;
     }
-
-    .hero-content, .hero-right {
-      flex: 1;
+    .hero ul {
+      margin: 1rem 0;
+      padding-left: 1.2rem;
     }
-
-    .hero-text {
-      max-width: 600px;
+    .hero img {
+      width: 100%;
+      border-radius: 10px;
     }
-
-    .cta-buttons {
-      margin-top: 1rem;
+    .caption {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      color: #ccc;
     }
-
-    .btn {
-      padding: 0.6rem 1rem;
-      border: none;
-      border-radius: 5px;
-      background: #00d1ff;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .info-cards {
+    .features {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
+      gap: 1.5rem;
     }
-
     .card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1rem;
+      background: rgba(0,0,0,0.45);
       border-radius: 10px;
-      width: 220px;
+      padding: 1rem;
       text-align: center;
-      transition: background 0.3s;
+      width: 200px;
+      transition: all 0.3s ease;
     }
-
-    .card i {
+    .card:hover {
+      background: rgba(0,0,0,0.6);
+      transform: translateY(-5px);
+    }
+    .card-icon {
       font-size: 2rem;
       margin-bottom: 0.5rem;
-      display: block;
     }
 
-    .card:hover {
-      background: rgba(255, 255, 255, 0.2);
+    /* Section 2 */
+    .section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem 2rem;
+      background: url('nyataekwondokick.jpg') no-repeat center center/cover;
+      position: relative;
     }
-
-    .section-dark {
-      background: url('nyataekwondokick.jpg') center/cover no-repeat;
-      background-color: rgba(0, 0, 0, 0.5);
-      background-blend-mode: overlay;
+    .section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 0;
     }
-
-    .section-light {
-      background: url('athletesworld.jpeg') center/cover no-repeat;
-      background-color: rgba(0, 0, 0, 0.5);
-      background-blend-mode: overlay;
-      padding: 7rem 2rem;
+    .section-content, .section-img {
+      position: relative;
+      z-index: 1;
+      width: 48%;
     }
-
-    .image-center {
-      margin-top: 2rem;
-      text-align: center;
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
-
-    .image-center img {
+    .section p {
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .section-img img {
+      width: 100%;
       border-radius: 10px;
     }
 
-    footer {
+    /* Section 3 */
+    .section-3 {
+      background: url('athletesworld.jpeg') no-repeat center center/cover;
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .section-3::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    .section-3-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .section-3 h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .footer {
       text-align: center;
       padding: 2rem;
+      background: #111;
       font-size: 0.9rem;
-      color: #aaa;
-    }
-
-    @media (max-width: 768px) {
-      .hero-section {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .info-cards {
-        flex-direction: column;
-        align-items: center;
-      }
     }
   </style>
 </head>
@@ -154,91 +174,77 @@
   <header>
     <div class="brand">Adidas Internship</div>
     <nav>
-      <a href="#about">About</a>
+      <a href="about.html">About</a>
       <a href="Nya_Williams_Resume (1).pdf" target="_blank">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Section 1 -->
-  <section class="hero-section">
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="hero-content">
-      <h1 class="section-title">You Got This</h1>
-      <div class="hero-text">
-        <p>I had to keep reminding myself of this while reteaching myself how to create and publish a live website — almost entirely on my own — after completing the Global Career Accelerator. Despite only having slim memorization of HTML and CSS, I pushed through and earned certifications in:</p>
-        <ul>
-          <li>AI Professional Skills</li>
-          <li>Intercultural Skills</li>
-          <li>UX/UI & Prototyping</li>
-          <li>Data Visualization</li>
-          <li>SEO Essentials</li>
-        </ul>
-        <p>Rebuilding this reminded me of the full-body reward that comes from pushing through something I once thought I couldn’t do — just like in sport.</p>
-      </div>
+      <h1>You Got This</h1>
+      <p>I had to keep reminding myself of this while reteaching myself how to create and publish a live website — almost entirely on my own — after completing the Global Career Accelerator. Despite only having slim memorization of HTML and CSS, I pushed through and earned certifications in:</p>
+      <ul>
+        <li>AI Professional Skills</li>
+        <li>Intercultural Skills</li>
+        <li>UX/UI & Prototyping</li>
+        <li>Data Visualization</li>
+        <li>SEO Essentials</li>
+      </ul>
+      <p>Rebuilding this reminded me of the full-body reward that comes from pushing through something I once thought I couldn’t do — just like in sport.</p>
     </div>
-    <div class="hero-right">
-      <img src="IMG_7877.jpg" alt="Soccer teammates" style="max-width: 100%; border-radius: 10px;" />
-      <div style="margin-top: 0.5rem; color: #ccc; text-align:center;">
-        <i class="fas fa-futbol"></i> Memories made on the field — my academy team.
-      </div>
+    <div class="hero-image">
+      <img src="IMG_7879.jpg" alt="Soccer Image" />
+      <div class="caption">⚽ Memories made on the field — my academy team.</div>
     </div>
   </section>
 
-  <!-- Info Cards Below Hero -->
-  <div class="info-cards">
+  <!-- Features -->
+  <div class="features">
     <div class="card">
-      <i class="fas fa-laptop-code"></i>
+      <div class="card-icon">💻</div>
       <strong>Project</strong><br/>
       Portfolio site created and deployed independently.
     </div>
     <div class="card">
-      <i class="fas fa-code"></i>
+      <div class="card-icon">🧠</div>
       <strong>Skills</strong><br/>
       HTML · CSS · UX/UI · SEO · AI Awareness
     </div>
     <div class="card">
-      <i class="fas fa-calendar-check"></i>
+      <div class="card-icon">📅</div>
       <strong>Availability</strong><br/>
       Open to internship opportunities
     </div>
   </div>
 
   <!-- Section 2 -->
-  <section class="section-dark" id="about">
-    <h2 class="section-title">Nothing Is Impossible</h2>
-    <div class="section-text">
+  <section class="section">
+    <div class="section-content">
+      <h2>Nothing Is Impossible</h2>
       <p>This project — built from scratch and fueled by self-belief — is a direct reflection of what adidas stands for: the power of showing up with courage, curiosity, and grit.</p>
-      <p>"Impossible Is Nothing" isn’t just a tagline. It’s a mindset I’ve carried in every sport, every challenge, and now, every project. Whether I was earning my black belt, flying in cheerleading, or pushing through data visualization coursework, I’ve learned that limits are meant to be tested.</p>
-      <p>That’s why I’m ready to bring this mindset into the adidas internship — and beyond.</p>
+      <p>"Impossible Is Nothing" isn’t just a tagline. It’s a mindset I’ve carried in every sport, every challenge, and now, every project.</p>
     </div>
-    <div class="image-center">
-      <img src="IMG_7879.jpg" alt="Taekwondo Kick" style="width: 320px;" />
-      <div style="margin-top: 0.5rem; color: #ccc;">
-        <i class="fas fa-dumbbell"></i> Practicing Taekwondo — where discipline, power, and perseverance meet.
-      </div>
+    <div class="section-img">
+      <img src="IMG_7877.jpg" alt="Taekwondo Action" />
+      <div class="caption">🏋️ Practicing Taekwondo — where discipline, power, and perseverance meet.</div>
     </div>
   </section>
 
   <!-- Section 3 -->
-  <section class="section-light">
-    <div class="hero-content" style="display:flex; align-items: center; justify-content: space-between; gap: 2rem;">
-      <div class="hero-left">
-        <h2 class="section-title">Next Gen Through Sport</h2>
-        <p>Sports have always been more than just competition — they’ve been my community. Whether it was Taekwondo with my teammates, soccer with my academy league, or cheering alongside a squad — I always knew I wasn’t just representing myself. I was part of something bigger — a family and a responsibility to others.</p>
-      </div>
-      <div class="hero-right" style="text-align: center;">
-        <img src="nyataekwondokick.jpg" alt="Next Gen" style="width: 280px; border-radius: 10px;" />
-        <div style="margin-top: 0.5rem; color: #ccc;">
-          <i class="fas fa-people-group"></i> Strength in sport — built together.
-        </div>
-      </div>
+  <section class="section-3">
+    <div class="section-3-content">
+      <h2>Next Gen Through Sport</h2>
+      <p>Sports have always been more than just competition — they’ve been my community. Whether it was Taekwondo with my teammates, soccer with my academy league, or cheering alongside a squad — I always knew I wasn’t just representing myself. I was part of something bigger — a family and a responsibility to others.</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer id="contact">
-    Made by Nya Williams • <a href="mailto:williamsnicolenya@gmail.com" style="color:#00d1ff;">williamsnicolenya@gmail.com</a>
+  <footer class="footer" id="contact">
+    Made by Nya Williams • <a href="mailto:williamsnicolenya@gmail.com">williamsnicolenya@gmail.com</a>
   </footer>
+
 </body>
 </html>
 
