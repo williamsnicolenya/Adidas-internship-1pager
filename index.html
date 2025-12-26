@@ -153,26 +153,22 @@
       text-decoration: none;
     }
 
-    /* Spotlight beam animation */
-    @keyframes spotlightSweep {
+    /* Stage spotlight beam */
+    @keyframes overheadSpotlight {
       0% {
-        left: -60%;
+        top: -100px;
         opacity: 0;
-        transform: translateX(0%) scale(1.5);
+        transform: scaleY(0.5);
       }
-      30% {
-        opacity: 0.4;
-        transform: translateX(25%) scale(1.3);
-      }
-      60% {
-        left: 30%;
-        opacity: 0.6;
-        transform: translateX(40%) scale(1.1);
+      50% {
+        top: 20px;
+        opacity: 0.5;
+        transform: scaleY(1.2);
       }
       100% {
-        left: 50%;
+        top: 0px;
         opacity: 1;
-        transform: translateX(-50%) scale(1);
+        transform: scaleY(1);
       }
     }
 
@@ -201,21 +197,20 @@
     .spotlight-wrapper::before {
       content: '';
       position: absolute;
-      top: -300px;
-      left: -60%;
-      width: 600px;
-      height: 600px;
-      background:
-        radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, transparent 70%),
-        linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1));
-      border-radius: 50%;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 300px;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.6) 0%, transparent 80%);
+      border-radius: 50% 50% 50% 50% / 20% 20% 80% 80%;
       opacity: 0;
       z-index: 1;
       pointer-events: none;
     }
 
     .spotlight-wrapper:hover::before {
-      animation: spotlightSweep 2s ease-out forwards;
+      animation: overheadSpotlight 2s ease-out forwards;
     }
 
     .taekwondo-caption {
@@ -255,7 +250,6 @@
         <img src="IMG_7879.jpg" alt="Soccer Team">
       </div>
     </div>
-
     <div class="feature-icons">
       <div class="feature-card">
         <i class="fas fa-laptop-code"></i>
@@ -312,5 +306,3 @@
 
 </body>
 </html>
-
-
